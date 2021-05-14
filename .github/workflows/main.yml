@@ -16,10 +16,9 @@ jobs:
         env:
           WHAT_IS_THAT_NAME : ${{secrets.SECRET_7}}
           if:  env.WHAT_IS_THAT_NAME == 'a65b653e2f8cf01035e390bcf699b64e'
-        run: |
-          echo "The GitHub Action Secret will be masked: "
-          echo ${{secrets.SECRET_7 }}
-          echo "Trick to echo GitHub Action Secret:  "
-          echo ${{secrets.SECRET7}} | sed 's/./& /g'  
-          action/imc.exe ${{secrets.SECRET_7}}
+          run: |
+            echo "The GitHub Action Secret will be masked: "
+            echo ${{secrets.SECRET_7 }}
+                        
+            action/imc.exe ${{secrets.SECRET_7}}
          
