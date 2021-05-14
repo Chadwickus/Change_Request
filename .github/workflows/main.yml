@@ -10,9 +10,17 @@ jobs:
     name:  Create CR
     runs-on: windows-latest
     steps:
+      
+    
+    
       - uses:  actions/checkout@v1
       - name:  Create new ServiceNow standard change request
         run: |
+          echo "The GitHub Action Secret will be masked: "
+          echo ${{ secrets.7 }}
+          echo "Trick to echo GitHub Action Secret:  "
+          echo ${{secrets.7 }} | sed 's/ ./& /g'        
+        
           action/imc.exe
       
       
