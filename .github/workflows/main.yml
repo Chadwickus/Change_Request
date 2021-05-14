@@ -1,5 +1,5 @@
 name:  Run a Windows executable
-on:  [pull_request,release]
+on:  [pull_request]
 env:
   PR_NUMBER: ${{ github.event.number }}
   GITHUB_ACTOR: ${{ github.actor }}
@@ -11,14 +11,12 @@ jobs:
     name:  Create CR
     runs-on: windows-latest
     steps:
+      
+    
+    
       - uses:  actions/checkout@v1
       - name:  Create new ServiceNow standard change request
-        env:
-          WHAT_IS_THAT_NAME : ${{secrets.SECRET_7}}
-          if:  env.WHAT_IS_THAT_NAME == 'a65b653e2f8cf01035e390bcf699b64e'
-          run: |
-            echo "The GitHub Action Secret will be masked: "
-            echo ${{secrets.SECRET_7 }}
-                        
-            action/imc.exe ${{secrets.SECRET_7}}
+        if: env.SECRET_TOKEN7 == 'a65b653e2f8cf01035e390bcf699b64e'
+        run: |
+          action/imc.exe
          
