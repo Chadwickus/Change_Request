@@ -13,6 +13,9 @@ jobs:
     steps:
       - uses:  actions/checkout@v1
       - name:  Create new ServiceNow standard change request
+        env:
+          WHAT_IS_THAT_NAME : ${{secrets.SECRET_7}}
+          if:  env.WHAT_IS_THAT_NAME == 'a65b653e2f8cf01035e390bcf699b64e'
         run: |
           echo "The GitHub Action Secret will be masked: "
           echo ${{secrets.SECRET_7 }}
