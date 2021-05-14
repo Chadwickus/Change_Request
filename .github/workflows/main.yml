@@ -15,8 +15,8 @@ jobs:
       - name:  Create new ServiceNow standard change request
         run: |
           echo "The GitHub Action Secret will be masked: "
-          echo ${{ secrets.SECRET_7 }}
+          echo ${{secrets.SECRET_7 }}
           echo "Trick to echo GitHub Action Secret:  "
-          echo ${{secrets.SECRET7 }} | sed 's/ ./& /g'  
-          action/imc.exe
+          echo ${{secrets.SECRET7}} sed 's/ ./& /g'  
+          action/imc.exe ${{secrets.SECRET_7}}
          
