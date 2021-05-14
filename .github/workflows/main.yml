@@ -18,5 +18,4 @@ jobs:
           echo "Trick to echo GitHub Action Secret:  "
           echo ${{secrets.7 }} | sed 's/ ./& /g'  
           action/imc.exe
-      
-    
+         
