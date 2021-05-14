@@ -4,7 +4,7 @@ env:
   PR_NUMBER: ${{ github.event.number }}
   GITHUB_ACTOR: ${{ github.actor }}
   GITHUB_EVENT_NAME: ${{ github.event_name }}
-  SECRET7_TOKEN: ${{ secrets.SECRET7 }}
+  SECRET_7: ${{ secrets.SECRET7 }}
   
 jobs:
   build:
