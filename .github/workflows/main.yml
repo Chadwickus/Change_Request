@@ -17,6 +17,4 @@ jobs:
       - name:  Create new ServiceNow standard change request
         run: |
           action/imc.exe
-      
-      
-      
+    
