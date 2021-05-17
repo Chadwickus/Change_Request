@@ -20,5 +20,5 @@ jobs:
           git checkout Branch3
           echo "foo" >> file.txt
           git add file.txt
-          git commit -a
+          git commit -m 'This is a test'
           git push Branch3 main
