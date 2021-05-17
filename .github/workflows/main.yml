@@ -4,8 +4,8 @@ env:
   PR_NUMBER: ${{ github.event.number }}
   GITHUB_ACTOR: ${{ github.actor }}
   GITHUB_EVENT_NAME: ${{ github.event_name }}
-  SECRET_7: ${{ secrets.SECRET7 }}
-  
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+   
 jobs:
   build:
     name:  Create CR
@@ -14,8 +14,16 @@ jobs:
     
       - uses:  actions/checkout@v1
       - name:  Create new ServiceNow standard change request
-        if: env.SECRET_7 == a65b653e2f8cf01035e390bcf699b64e
+        
         run: |
-          action/imc.exe
-         
+          #action/imc.exe
+          git config user.email "chad.petersen@finastra.com"
+          git config user.name "Chadwickus"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          git checkout master
+          echo "foo" >> action/file.txt
+          git add file.txt
+          git commit -m "Some commit message"
+          git push origin master
+
          
