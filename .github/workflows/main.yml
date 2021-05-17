@@ -17,8 +17,8 @@ jobs:
           git config user.email "chad.petersen@finastra.com"
           git config user.name "Chadwickus"
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          git checkout branch3
-          echo "foo" >> action/file.txt
+          git checkout Main
+          echo "foo" >> file.txt
           git add file.txt
           git commit -m "Some commit message"
           git push origin master
