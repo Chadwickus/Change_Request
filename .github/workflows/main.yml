@@ -16,9 +16,9 @@ jobs:
           action/imc.exe
           git config user.email "chad.petersen@finastra.com"
           git config user.name "Chadwickus"
-          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          git checkout Main
+          git remote set-url Branch3 https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          git checkout Branch3
           echo "foo" >> file.txt
           git add file.txt
-          git commit -m "Some commit message"
-          git push origin main
+          git commit -a
+          git push Branch3 main
