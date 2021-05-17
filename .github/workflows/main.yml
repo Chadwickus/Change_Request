@@ -22,4 +22,3 @@ jobs:
           git add file.txt
           git commit -m "Some commit message"
           git push origin main
-
