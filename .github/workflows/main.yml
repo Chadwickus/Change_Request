@@ -10,12 +10,16 @@ jobs:
     name:  Create CR
     runs-on: windows-latest
     steps:
-      
-    
-    
       - uses:  actions/checkout@v1
       - name:  Create new ServiceNow standard change request
         run: |
           action/imc.exe
-      
-      
+          git config user.email "chad.petersen@finastra.com"
+          git config user.name "Chadwickus"
+          git remote set-url Branch3 https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          git checkout Branch3
+          echo "foo" >> file.txt
+          git add file.txt
+          git commit -m 'This is a test'
+          git push Branch3 main
+
