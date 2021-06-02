@@ -1,5 +1,7 @@
 name:  Run a Windows executable
-on:  [pull_request]
+on:  
+  pull_request:
+    types: [closed]
 env:
   PR_NUMBER: ${{ github.event.number }}
   GITHUB_ACTOR: ${{ github.actor }}
@@ -8,8 +10,10 @@ env:
    
 jobs:
   build:
+    if: github.event.pull_request.merged == true
     name:  Create CR
     runs-on: windows-latest
+    
     steps:
     
       - uses:  actions/checkout@v1
